@@ -33,7 +33,7 @@ public class MovieController {
     };
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
-    public Movie listMovies(@PathVariable int id){
+    public Movie findOneMovie(@PathVariable int id){
         return this.movieService.findById(id);
     };
     public void update(){};

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by localadmin on 16/01/17.
  */
@@ -26,6 +28,11 @@ public class MovieController {
     @RequestMapping(value = "", method = RequestMethod.POST)
     public Movie create(@RequestBody Movie movie){
         return this.movieService.create(movie);
+    };
+
+    @RequestMapping(value = "", method = RequestMethod.GET)
+    public Iterable<Movie> listMovies(){
+        return this.movieService.listMovies();
     };
 
     public void update(){};

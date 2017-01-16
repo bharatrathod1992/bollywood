@@ -10,6 +10,5 @@ public class BollywoodApplication {
 
 		SpringApplication.run(BollywoodApplication.class, args);
 		System.out.println("hello......");
-		System.out.println("hello......");
 	}
 }

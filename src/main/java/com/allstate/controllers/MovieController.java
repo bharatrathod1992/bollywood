@@ -3,10 +3,7 @@ package com.allstate.controllers;
 import com.allstate.entities.Movie;
 import com.allstate.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,8 +32,15 @@ public class MovieController {
         return this.movieService.listMovies();
     };
 
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
+    public Movie listMovies(@PathVariable int id){
+        return this.movieService.findById(id);
+    };
     public void update(){};
 
-    public void delete(){};
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable int id){
+        this.movieService.deleteMovie(id);
+    };
 
 }

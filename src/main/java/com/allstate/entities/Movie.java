@@ -17,6 +17,7 @@ public class Movie {
 
     private int id;
 
+    @Version
     private int version;
     private String title;
     private boolean watched;
@@ -33,7 +34,7 @@ public class Movie {
         this.id = id;
     }
 
-    @Version
+
     public int getVersion() {
         return version;
     }
